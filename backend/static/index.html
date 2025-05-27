@@ -1,0 +1,1143 @@
+<html lang="utf-8"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - WebCraft</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&amp;family=Montserrat:wght@400;600&amp;display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background: #ffffff; /* White background */
+        color: #333333; /* Dark text for readability */
+        position: relative;
+        overflow-x: hidden;
+        line-height: 1.8;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem 2rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(138, 74, 243, 0.2); /* Violet border */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+        z-index: 1000;
+      }
+      nav a {
+        color: #333333;
+        text-decoration: none;
+        margin: 0 1.5rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+      nav a:hover {
+        color: #8a4af3; /* Rich violet hover */
+        transform: translateY(-2px);
+        display: inline-block;
+      }
+      nav a.active {
+        color: #8a4af3;
+        border-bottom: 2px solid #8a4af3;
+        padding-bottom: 0.2rem;
+      }
+      main {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0;
+      }
+      .hero-section {
+        position: relative;
+        padding: 8rem 2rem;
+        text-align: center;
+        background: linear-gradient(135deg, #f5f5f5, #ffffff); /* Light gradient */
+        border-bottom: 1px solid rgba(138, 74, 243, 0.2);
+      }
+      .hero-section h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 4.5rem;
+        font-weight: 700;
+        color: #8a4af3; /* Rich violet for heading */
+        margin-bottom: 1.5rem;
+        animation: fadeIn 1.5s ease-in-out;
+        letter-spacing: 1px;
+      }
+      .hero-section p {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: #555555; /* Medium gray for paragraphs */
+        margin: 1.5rem 0;
+        animation: fadeInUp 1.5s ease-in-out;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-section button {
+        background: linear-gradient(90deg, #8a4af3, #c47aff); /* Violet to light violet gradient */
+        color: #ffffff;
+        padding: 1rem 3rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        animation: fadeInUp 1.5s ease-in-out;
+        box-shadow: 0 4px 15px rgba(138, 74, 243, 0.3);
+      }
+      .hero-section button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(138, 74, 243, 0.5), 0 0 25px rgba(138, 74, 243, 0.3);
+        background: linear-gradient(90deg, #c47aff, #8a4af3);
+      }
+      .features-section {
+        padding: 5rem 2rem;
+        background: #ffffff; /* White background */
+      }
+      .features-section h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #8a4af3; /* Rich violet */
+        text-align: center;
+        margin-bottom: 3rem;
+        animation: fadeIn 1.5s ease-in-out;
+        letter-spacing: 0.5px;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .feature-card {
+        background: rgba(245, 245, 245, 0.9); /* Light gray for cards */
+        backdrop-filter: blur(10px);
+        padding: 2.5rem;
+        border-radius: 12px;
+        border: 1px solid rgba(138, 74, 243, 0.2);
+        transition: all 0.3s ease;
+        animation: fadeInUp 1.5s ease-in-out;
+      }
+      .feature-card:hover {
+        transform: translateY(-10px);
+        border-color: #8a4af3;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1), 0 0 20px rgba(138, 74, 243, 0.2);
+      }
+      .feature-card h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #8a4af3;
+        margin-bottom: 1rem;
+        letter-spacing: 0.5px;
+      }
+      .feature-card p {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #555555;
+      }
+      footer {
+        background: linear-gradient(180deg, #e0e0e0, #ffffff); /* Light gradient for footer */
+        color: #666666;
+        padding: 2rem 0;
+        text-align: center;
+        border-top: 1px solid rgba(138, 74, 243, 0.2);
+      }
+      footer a {
+        color: #8a4af3;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      footer a:hover {
+        color: #c47aff;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body>
+    
+      <nav style="position: sticky; top: 0; background: rgba(42, 42, 42, 0.8); padding: 1rem 2rem; text-align: center; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); z-index: 1000;">
+        <a href="index.html" style="color: #e0e0e0; text-decoration: none; margin: 0 1.5rem; font-weight: 600; color: #bb86fc; border-bottom: 2px solid #bb86fc;">index</a><a href="cats.html" style="color: #e0e0e0; text-decoration: none; margin: 0 1.5rem; font-weight: 600; ">cats</a>
+      </nav>
+    
+    <main>
+      
+        <section class="hero-section" draggable="true" data-drag-id="drag-0" style="position: relative; cursor: move; display: block;">
+          <h1 draggable="true" data-drag-id="drag-1" style="position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;">WebCraft</h1>
+          <p draggable="true" data-drag-id="drag-2" style="position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;">Create your own website using our advanced platform, which is designed to make it easy to build a professional-looking and creative website.</p>
+          <button draggable="true" data-drag-id="drag-3" style="position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;">find out about our services</button>
+        </section>
+        <section class="features-section" draggable="true" data-drag-id="drag-4" style="position: relative; cursor: move; display: block;">
+          <h2 draggable="true" data-drag-id="drag-5" style="position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;">Our offerings</h2>
+          <div class="features-grid" draggable="true" data-drag-id="drag-6" style="position: relative; cursor: move; display: block;">
+            
+            <div class="feature-card" draggable="true" data-drag-id="drag-7" style="position: relative; cursor: move; display: block;">
+              <h3 draggable="true" data-drag-id="drag-8" style="position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="">Web Development</h3>
+              <p draggable="true" data-drag-id="drag-9" style="position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="">Creation of customized websites, optimized for your business objectives.</p>
+            </div><div class="feature-card" draggable="true" data-drag-id="drag-10" style="position: relative; cursor: move; display: block;">
+              <h3 draggable="true" data-drag-id="drag-11" style="position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="">Refined design</h3>
+              <p draggable="true" data-drag-id="drag-12" style="position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;">Modern, intuitive interfaces for an exceptional user experience.</p>
+            </div>
+            <div class="feature-card" draggable="true" data-drag-id="drag-13" style="position: relative; cursor: move; display: block;">
+              <h3 draggable="true" data-drag-id="drag-14" style="position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;">Advanced Performance</h3>
+              <p draggable="true" data-drag-id="drag-15" style="position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;">Cutting-edge technologies for fast, reliable sites.</p>
+            </div>
+          </div>
+        </section>
+      
+    </main>
+    
+      <footer style="
+      background: linear-gradient(180deg, #e0e0e0, #ffffff);
+      color: #666666;
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(138, 74, 243, 0.2);
+    ">
+        <p style="font-size: 0.9rem; margin: 0.3rem 0px; font-weight: 400; position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;" draggable="true" data-drag-id="drag-16">© 2025 WebCraft - All Rights Reserved</p>
+        <p style="font-size: 0.9rem; margin: 0.3rem 0px; font-weight: 400; position: relative; cursor: move; display: block; overflow-wrap: break-word; word-break: break-word; white-space: normal;" draggable="true" data-drag-id="drag-17">
+          <a href="mailto:support@WebCraft.com" style="
+      color: #8a4af3;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    ">support@WebCraft.com</a>
+        </p>
+        <style>
+      a:hover {
+        color: #c47aff;
+      }
+    </style>
+      </footer>
+    
+  
+  
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const editableElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, div, section, article, aside, figure, img, button');
+        let elementCounter = editableElements.length;
+
+        editableElements.forEach((el, index) => {
+          const isGoogleMapSection = el.tagName === 'SECTION' && el.querySelector('#map');
+          if ((el.textContent && el.textContent.trim()) || el.tagName === 'IMG' || el.tagName === 'BUTTON' || isGoogleMapSection) {
+            el.setAttribute('draggable', 'true');
+            el.setAttribute('data-drag-id', 'drag-' + index);
+            el.style.position = 'relative';
+            el.style.cursor = 'move';
+            el.style.display = isGoogleMapSection ? 'block' : (el.tagName === 'IMG' ? 'inline-block' : el.style.display || 'block');
+            if (isGoogleMapSection) {
+              const mapDiv = el.querySelector('#map');
+              if (mapDiv) {
+                mapDiv.style.width = mapDiv.style.width || '100%';
+                mapDiv.style.height = mapDiv.style.height || '400px';
+              }
+            }
+
+            // Add click handler to show selection frame and toolbar
+            el.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Remove existing frame and toolbar
+              const existingFrame = document.querySelector('.selection-frame');
+              if (existingFrame) existingFrame.remove();
+              const existingToolbar = document.querySelector('.control-toolbar');
+              if (existingToolbar) existingToolbar.remove();
+
+              // Create selection frame
+              const rect = el.getBoundingClientRect();
+              const frame = document.createElement('div');
+              frame.className = 'selection-frame';
+              frame.style.position = 'absolute';
+              frame.style.top = (rect.top - 2 + window.scrollY) + 'px';
+              frame.style.left = (rect.left - 2 + window.scrollX) + 'px';
+              frame.style.width = (rect.width + 4) + 'px';
+              frame.style.height = (rect.height + 4) + 'px';
+              frame.style.border = '2px solid #007bff';
+              frame.style.zIndex = '999';
+              frame.setAttribute('data-target-id', 'drag-' + index);
+              document.body.appendChild(frame);
+
+              // Create toolbar
+              const toolbar = document.createElement('div');
+              toolbar.className = 'control-toolbar';
+              toolbar.style.position = 'absolute';
+              toolbar.style.top = (rect.top - 40 + window.scrollY) + 'px';
+              toolbar.style.left = (rect.left + rect.width / 2 - 100 + window.scrollX) + 'px';
+              toolbar.style.background = '#fff';
+              toolbar.style.border = '1px solid #ddd';
+              toolbar.style.borderRadius = '8px';
+              toolbar.style.padding = '4px';
+              toolbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+              toolbar.style.zIndex = '1000';
+              toolbar.style.display = 'flex';
+              toolbar.style.gap = '4px';
+
+              const icons = [
+                { title: 'Edit', icon: '✏️' },
+                { title: 'Lock', icon: '🔒' },
+                { title: 'Duplicate', icon: '📋' },
+                { title: 'Delete', icon: '🗑️' },
+                { title: 'More', icon: '⋯' }
+              ].map(item => {
+                const btn = document.createElement('button');
+                btn.innerHTML = item.icon;
+                btn.title = item.title;
+                btn.style.border = 'none';
+                btn.style.background = 'none';
+                btn.style.cursor = 'pointer';
+                btn.style.fontSize = '16px';
+                btn.style.padding = '4px';
+                btn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  if (item.title === 'Delete') {
+                    el.remove();
+                    frame.remove();
+                    toolbar.remove();
+                  } else if (item.title === 'Duplicate') {
+                    const clone = el.cloneNode(true);
+                    elementCounter++;
+                    clone.setAttribute('data-drag-id', 'drag-' + elementCounter);
+                    el.parentNode.insertBefore(clone, el.nextSibling);
+                    frame.remove();
+                    toolbar.remove();
+                  }
+                  const newHTML = document.documentElement.outerHTML;
+                  window.parent.postMessage({ type: 'update-html', html: newHTML }, '*');
+                });
+                return btn;
+              });
+
+              icons.forEach(btn => toolbar.appendChild(btn));
+              document.body.appendChild(toolbar);
+
+              // Hide frame and toolbar when clicking outside
+              document.addEventListener('click', function hideFrame(e) {
+                if (!frame.contains(e.target) && !el.contains(e.target) && !toolbar.contains(e.target)) {
+                  frame.remove();
+                  toolbar.remove();
+                  document.removeEventListener('click', hideFrame);
+                }
+              }, { once: true });
+            });
+          }
+        });
+
+        let draggedElement = null;
+        let dropTarget = null;
+        let isDragging = false;
+        let isResizing = false;
+        let resizeTarget = null;
+        let startX, startY, startWidth, startHeight;
+        let resizeEdge = '';
+
+        // Drag-and-drop functionality
+        const handleDragStart = (e) => {
+          const target = e.target.closest('[draggable="true"]');
+          if (target && !isResizing && ((target.textContent && target.textContent.trim()) || target.tagName === 'IMG' || target.tagName === 'BUTTON' || (target.tagName === 'SECTION' && target.querySelector('#map')))) {
+            draggedElement = target;
+            isDragging = true;
+            target.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            const existingFrame = document.querySelector('.selection-frame');
+            if (existingFrame) existingFrame.remove();
+            const existingToolbar = document.querySelector('.control-toolbar');
+            if (existingToolbar) existingToolbar.remove();
+          }
+        };
+
+        const handleDragOver = (e) => {
+          e.preventDefault();
+          const target = e.target.closest('[draggable="true"]');
+          if (draggedElement && target !== draggedElement && ((target.textContent && target.textContent.trim()) || target.tagName === 'IMG' || target.tagName === 'BUTTON' || (target.tagName === 'SECTION' && target.querySelector('#map')))) {
+            dropTarget = target;
+            target.classList.add('drag-over');
+          }
+        };
+
+        const handleDragLeave = (e) => {
+          const target = e.target.closest('[draggable="true"]');
+          if (target) {
+            target.classList.remove('drag-over');
+            dropTarget = null;
+          }
+        };
+
+        const handleDrop = (e) => {
+          e.preventDefault();
+          const target = dropTarget;
+          if (draggedElement && target && draggedElement !== target && ((draggedElement.textContent && draggedElement.textContent.trim()) || draggedElement.tagName === 'IMG' || draggedElement.tagName === 'BUTTON' || (draggedElement.tagName === 'SECTION' && draggedElement.querySelector('#map')))) {
+            const parent = target.parentElement;
+            if (parent) {
+              const isImageDrag = draggedElement.tagName === 'IMG';
+              const isImageTarget = target.tagName === 'IMG';
+              const isButtonDrag = draggedElement.tagName === 'BUTTON';
+              const isButtonTarget = target.tagName === 'BUTTON';
+              const isGoogleMapSectionDrag = draggedElement.tagName === 'SECTION' && draggedElement.querySelector('#map');
+              const isGoogleMapSectionTarget = target.tagName === 'SECTION' && target.querySelector('#map');
+
+              if ((isImageDrag && isImageTarget) || (isButtonDrag && isButtonTarget) || (isGoogleMapSectionDrag && isGoogleMapSectionTarget)) {
+                const tempHTML = draggedElement.innerHTML;
+                const tempWidth = draggedElement.style.width;
+                const tempHeight = draggedElement.style.height;
+                draggedElement.innerHTML = target.innerHTML;
+                draggedElement.style.width = target.style.width;
+                draggedElement.style.height = target.style.height;
+                target.innerHTML = tempHTML;
+                target.style.width = tempWidth;
+                target.style.height = tempHeight;
+
+                if (isGoogleMapSectionDrag || isGoogleMapSectionTarget) {
+                  [draggedElement, target].forEach(section => {
+                    const mapDiv = section.querySelector('#map');
+                    if (mapDiv) {
+                      const script = section.querySelector('script:not([src])');
+                      if (script) eval(script.textContent);
+                    }
+                  });
+                }
+              } else {
+                parent.insertBefore(draggedElement, target);
+              }
+              draggedElement.classList.remove('dragging');
+              target.classList.remove('drag-over');
+              draggedElement = null;
+              dropTarget = null;
+
+              const newHTML = document.documentElement.outerHTML;
+              window.parent.postMessage({ type: 'update-html', html: newHTML }, '*');
+            }
+          }
+        };
+
+        const handleDragEnd = () => {
+          if (draggedElement) {
+            draggedElement.classList.remove('dragging');
+            draggedElement = null;
+          }
+          if (dropTarget) {
+            dropTarget.classList.remove('drag-over');
+            dropTarget = null;
+          }
+          isDragging = false;
+        };
+
+        // Attach drag-and-drop event listeners
+        document.addEventListener('dragstart', handleDragStart);
+        document.addEventListener('dragover', handleDragOver);
+        document.addEventListener('dragleave', handleDragLeave);
+        document.addEventListener('drop', handleDrop);
+        document.addEventListener('dragend', handleDragEnd);
+
+        // Text editing for all text-containing elements
+        const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, button');
+        textElements.forEach(el => {
+          if (el.textContent && el.textContent.trim()) {
+            el.style.overflowWrap = el.style.overflowWrap || 'break-word';
+            el.style.wordBreak = el.style.wordBreak || 'break-word';
+            el.style.whiteSpace = el.style.whiteSpace || 'normal';
+
+            el.addEventListener('click', (e) => {
+              if (el.classList.contains('editing')) return;
+              el.classList.add('editing');
+
+              const computedStyle = window.getComputedStyle(el);
+              const originalText = el.textContent;
+
+              const textarea = document.createElement('textarea');
+              textarea.value = originalText;
+
+              textarea.style.width = computedStyle.width;
+              textarea.style.maxWidth = computedStyle.maxWidth === 'none' ? computedStyle.width : computedStyle.maxWidth;
+              textarea.style.height = 'auto';
+              textarea.style.minHeight = computedStyle.height;
+              textarea.style.maxHeight = computedStyle.maxHeight === 'none' ? 'none' : computedStyle.maxHeight;
+              textarea.style.padding = computedStyle.padding;
+              textarea.style.margin = computedStyle.margin;
+              textarea.style.border = '1px solid #ccc';
+              textarea.style.borderRadius = computedStyle.borderRadius;
+              textarea.style.fontFamily = computedStyle.fontFamily;
+              textarea.style.fontSize = computedStyle.fontSize;
+              textarea.style.fontWeight = computedStyle.fontWeight;
+              textarea.style.color = computedStyle.color;
+              textarea.style.backgroundColor = computedStyle.backgroundColor;
+              textarea.style.lineHeight = computedStyle.lineHeight;
+              textarea.style.textAlign = computedStyle.textAlign;
+              textarea.style.boxSizing = 'border-box';
+              textarea.style.resize = 'vertical';
+              textarea.style.overflowWrap = 'break-word';
+              textarea.style.wordBreak = 'break-word';
+              textarea.style.whiteSpace = 'normal';
+              textarea.style.overflow = computedStyle.overflow === 'visible' ? 'auto' : computedStyle.overflow;
+
+              el.textContent = '';
+              el.appendChild(textarea);
+              textarea.focus();
+
+              textarea.style.height = 'auto';
+              textarea.style.height = `${textarea.scrollHeight}px`;
+
+              textarea.addEventListener('input', () => {
+                textarea.style.height = 'auto';
+                textarea.style.height = `${textarea.scrollHeight}px`;
+              });
+
+              textarea.addEventListener('blur', () => {
+                const newText = textarea.value || originalText;
+                while (el.firstChild) {
+                  el.removeChild(el.firstChild);
+                }
+                el.textContent = newText;
+                el.classList.remove('editing');
+
+                el.style.overflowWrap = 'break-word';
+                el.style.wordBreak = 'break-word';
+                el.style.whiteSpace = 'normal';
+
+                const newHTML = document.documentElement.outerHTML;
+                window.parent.postMessage({ type: 'update-html', html: newHTML }, '*');
+              });
+
+              textarea.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  textarea.blur();
+                }
+              });
+            });
+          }
+        });
+
+        // Helper function to determine if the mouse is near an edge
+        const isNearEdge = (el, clientX, clientY) => {
+          const rect = el.getBoundingClientRect();
+          const edgeThreshold = 10;
+          const nearRight = Math.abs(clientX - rect.right) < edgeThreshold;
+          const nearBottom = Math.abs(clientY - rect.bottom) < edgeThreshold;
+          const nearLeft = Math.abs(clientX - rect.left) < edgeThreshold;
+          const nearTop = Math.abs(clientY - rect.top) < edgeThreshold;
+
+          if (nearRight && nearBottom) return 'bottom-right';
+          if (nearLeft && nearBottom) return 'bottom-left';
+          if (nearRight && nearTop) return 'top-right';
+          if (nearLeft && nearTop) return 'top-left';
+          if (nearRight) return 'right';
+          if (nearLeft) return 'left';
+          if (nearBottom) return 'bottom';
+          if (nearTop) return 'top';
+          return '';
+        };
+
+        // Edge-based resizing on the selection frame
+        document.addEventListener('mousemove', (e) => {
+          if (isResizing) return;
+
+          const frame = document.querySelector('.selection-frame');
+          if (frame) {
+            const edge = isNearEdge(frame, e.clientX, e.clientY);
+            if (edge === 'bottom-right' || edge === 'top-left') {
+              frame.style.cursor = 'se-resize';
+            } else if (edge === 'bottom-left' || edge === 'top-right') {
+              frame.style.cursor = 'sw-resize';
+            } else if (edge === 'left' || edge === 'right') {
+              frame.style.cursor = 'ew-resize';
+            } else if (edge === 'top' || edge === 'bottom') {
+              frame.style.cursor = 'ns-resize';
+            } else {
+              frame.style.cursor = 'default';
+            }
+          }
+        });
+
+        document.addEventListener('mousedown', (e) => {
+          const frame = document.querySelector('.selection-frame');
+          const target = document.querySelector('[data-drag-id="' + (frame?.getAttribute('data-target-id') || '') + '"]');
+          if (frame && target) {
+            const edge = isNearEdge(frame, e.clientX, e.clientY);
+            if (edge) {
+              isResizing = true;
+              resizeTarget = target;
+              resizeEdge = edge;
+              startX = e.clientX;
+              startY = e.clientY;
+              startWidth = parseInt(getComputedStyle(target).width) || target.offsetWidth;
+              startHeight = parseInt(getComputedStyle(target).height) || target.offsetHeight;
+              e.preventDefault();
+            }
+          }
+        });
+
+        document.addEventListener('mousemove', (e) => {
+          if (!isResizing || !resizeTarget) return;
+
+          const dx = e.clientX - startX;
+          const dy = e.clientY - startY;
+          let newWidth = startWidth;
+          let newHeight = startHeight;
+
+          if (resizeEdge.includes('right')) {
+            newWidth = Math.max(50, startWidth + dx);
+          } else if (resizeEdge.includes('left')) {
+            newWidth = Math.max(50, startWidth - dx);
+            resizeTarget.style.left = (parseInt(getComputedStyle(resizeTarget).left) || 0) + (startWidth - newWidth) + 'px';
+          }
+          if (resizeEdge.includes('bottom')) {
+            newHeight = Math.max(50, startHeight + dy);
+          } else if (resizeEdge.includes('top')) {
+            newHeight = Math.max(50, startHeight - dy);
+            resizeTarget.style.top = (parseInt(getComputedStyle(resizeTarget).top) || 0) + (startHeight - newHeight) + 'px';
+          }
+
+          resizeTarget.style.width = `${newWidth}px`;
+          resizeTarget.style.height = `${newHeight}px`;
+
+          const mapDiv = resizeTarget.querySelector('#map');
+          if (mapDiv) {
+            mapDiv.style.width = `${newWidth}px`;
+            mapDiv.style.height = `${newHeight - 50}px`;
+            if (typeof google !== 'undefined' && google.maps) {
+              google.maps.event.trigger(mapDiv.__gmap__, 'resize');
+            }
+          }
+
+          // Update the frame size
+          const frame = document.querySelector('.selection-frame');
+          if (frame) {
+            frame.style.width = (newWidth + 4) + 'px';
+            frame.style.height = (newHeight + 4) + 'px';
+            frame.style.left = (resizeTarget.getBoundingClientRect().left - 2 + window.scrollX) + 'px';
+            frame.style.top = (resizeTarget.getBoundingClientRect().top - 2 + window.scrollY) + 'px';
+          }
+        });
+
+        document.addEventListener('mouseup', () => {
+          if (isResizing) {
+            isResizing = false;
+            const newHTML = document.documentElement.outerHTML;
+            window.parent.postMessage({ type: 'update-html', html: newHTML }, '*');
+            resizeTarget.style.cursor = 'move';
+            resizeTarget = null;
+            resizeEdge = '';
+          }
+        });
+      });
+    </script>
+    <style>
+      .dragging {
+        opacity: 0.5;
+        transform: scale(1.2);
+        transition: opacity 0.3s, transform 0.2s ease-in-out;
+        border: 2px dashed #007bff;
+      }
+      .drag-over {
+        background: #a5d6a7;
+        border: 2px dashed #4caf50;
+      }
+      [draggable="true"] {
+        padding: 0.5rem;
+        margin: 0.5rem;
+        cursor: grab;
+      }
+      [draggable="true"].dragging {
+        cursor: grabbing;
+      }
+      .editing {
+        border: 1px dashed #007bff;
+        padding: 5px;
+      }
+      img, div, section, article, aside, figure, button {
+        min-width: 50px;
+        min-height: 50px;
+      }
+      section:has(#map) {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      .control-toolbar button:hover {
+        background: #f0f0f0;
+        border-radius: 4px;
+      }
+      .selection-frame {
+        pointer-events: auto;
+        box-sizing: border-box;
+      }
+    </style>
+  <script data-navigation-handler="true">
+          document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href$=".html"]').forEach(link => {
+              link.addEventListener('click', e => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                window.parent.postMessage({ type: 'navigation', href }, '*');
+              });
+            });
+          });
+        </script><script data-drag-drop-handler="true">
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const editableElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, div, section, article, aside, figure, img, button');
+        let elementCounter = editableElements.length;
+
+        editableElements.forEach((el, index) => {
+          const isGoogleMapSection = el.tagName === 'SECTION' && el.querySelector('#map');
+          if ((el.textContent && el.textContent.trim()) || el.tagName === 'IMG' || el.tagName === 'BUTTON' || isGoogleMapSection) {
+            el.setAttribute('draggable', 'true');
+            el.setAttribute('data-drag-id', 'drag-' + index);
+            el.style.position = 'relative';
+            el.style.cursor = 'move';
+            el.style.display = isGoogleMapSection ? 'block' : (el.tagName === 'IMG' ? 'inline-block' : el.style.display || 'block');
+            if (isGoogleMapSection) {
+              const mapDiv = el.querySelector('#map');
+              if (mapDiv) {
+                mapDiv.style.width = mapDiv.style.width || '100%';
+                mapDiv.style.height = mapDiv.style.height || '400px';
+              }
+            }
+
+            // Add click handler to show selection frame and toolbar
+            el.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Remove existing frame and toolbar
+              const existingFrame = document.querySelector('.selection-frame');
+              if (existingFrame) existingFrame.remove();
+              const existingToolbar = document.querySelector('.control-toolbar');
+              if (existingToolbar) existingToolbar.remove();
+
+              // Create selection frame
+              const rect = el.getBoundingClientRect();
+              const frame = document.createElement('div');
+              frame.className = 'selection-frame';
+              frame.style.position = 'absolute';
+              frame.style.top = (rect.top - 2 + window.scrollY) + 'px';
+              frame.style.left = (rect.left - 2 + window.scrollX) + 'px';
+              frame.style.width = (rect.width + 4) + 'px';
+              frame.style.height = (rect.height + 4) + 'px';
+              frame.style.border = '2px solid #007bff';
+              frame.style.zIndex = '999';
+              frame.setAttribute('data-target-id', 'drag-' + index);
+              document.body.appendChild(frame);
+
+              // Create toolbar
+              const toolbar = document.createElement('div');
+              toolbar.className = 'control-toolbar';
+              toolbar.style.position = 'absolute';
+              toolbar.style.top = (rect.top - 40 + window.scrollY) + 'px';
+              toolbar.style.left = (rect.left + rect.width / 2 - 100 + window.scrollX) + 'px';
+              toolbar.style.background = '#fff';
+              toolbar.style.border = '1px solid #ddd';
+              toolbar.style.borderRadius = '8px';
+              toolbar.style.padding = '4px';
+              toolbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+              toolbar.style.zIndex = '1000';
+              toolbar.style.display = 'flex';
+              toolbar.style.gap = '4px';
+
+              const icons = [
+                { title: 'Edit', icon: '✏️' },
+                { title: 'Lock', icon: '🔒' },
+                { title: 'Duplicate', icon: '📋' },
+                { title: 'Delete', icon: '🗑️' },
+                { title: 'More', icon: '⋯' }
+              ].map(item => {
+                const btn = document.createElement('button');
+                btn.innerHTML = item.icon;
+                btn.title = item.title;
+                btn.style.border = 'none';
+                btn.style.background = 'none';
+                btn.style.cursor = 'pointer';
+                btn.style.fontSize = '16px';
+                btn.style.padding = '4px';
+                btn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  if (item.title === 'Delete') {
+                    el.remove();
+                    frame.remove();
+                    toolbar.remove();
+                  } else if (item.title === 'Duplicate') {
+                    const clone = el.cloneNode(true);
+                    elementCounter++;
+                    clone.setAttribute('data-drag-id', 'drag-' + elementCounter);
+                    el.parentNode.insertBefore(clone, el.nextSibling);
+                    frame.remove();
+                    toolbar.remove();
+                  }
+                  const newHTML = document.documentElement.outerHTML;
+                  window.parent.postMessage({ type: 'update-html', html: newHTML }, '*');
+                });
+                return btn;
+              });
+
+              icons.forEach(btn => toolbar.appendChild(btn));
+              document.body.appendChild(toolbar);
+
+              // Hide frame and toolbar when clicking outside
+              document.addEventListener('click', function hideFrame(e) {
+                if (!frame.contains(e.target) && !el.contains(e.target) && !toolbar.contains(e.target)) {
+                  frame.remove();
+                  toolbar.remove();
+                  document.removeEventListener('click', hideFrame);
+                }
+              }, { once: true });
+            });
+          }
+        });
+
+        let draggedElement = null;
+        let dropTarget = null;
+        let isDragging = false;
+        let isResizing = false;
+        let resizeTarget = null;
+        let startX, startY, startWidth, startHeight;
+        let resizeEdge = '';
+
+        // Drag-and-drop functionality
+        const handleDragStart = (e) => {
+          const target = e.target.closest('[draggable="true"]');
+          if (target && !isResizing && ((target.textContent && target.textContent.trim()) || target.tagName === 'IMG' || target.tagName === 'BUTTON' || (target.tagName === 'SECTION' && target.querySelector('#map')))) {
+            draggedElement = target;
+            isDragging = true;
+            target.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            const existingFrame = document.querySelector('.selection-frame');
+            if (existingFrame) existingFrame.remove();
+            const existingToolbar = document.querySelector('.control-toolbar');
+            if (existingToolbar) existingToolbar.remove();
+          }
+        };
+
+        const handleDragOver = (e) => {
+          e.preventDefault();
+          const target = e.target.closest('[draggable="true"]');
+          if (draggedElement && target !== draggedElement && ((target.textContent && target.textContent.trim()) || target.tagName === 'IMG' || target.tagName === 'BUTTON' || (target.tagName === 'SECTION' && target.querySelector('#map')))) {
+            dropTarget = target;
+            target.classList.add('drag-over');
+          }
+        };
+
+        const handleDragLeave = (e) => {
+          const target = e.target.closest('[draggable="true"]');
+          if (target) {
+            target.classList.remove('drag-over');
+            dropTarget = null;
+          }
+        };
+
+        const handleDrop = (e) => {
+          e.preventDefault();
+          const target = dropTarget;
+          if (draggedElement && target && draggedElement !== target && ((draggedElement.textContent && draggedElement.textContent.trim()) || draggedElement.tagName === 'IMG' || draggedElement.tagName === 'BUTTON' || (draggedElement.tagName === 'SECTION' && draggedElement.querySelector('#map')))) {
+            const parent = target.parentElement;
+            if (parent) {
+              const isImageDrag = draggedElement.tagName === 'IMG';
+              const isImageTarget = target.tagName === 'IMG';
+              const isButtonDrag = draggedElement.tagName === 'BUTTON';
+              const isButtonTarget = target.tagName === 'BUTTON';
+              const isGoogleMapSectionDrag = draggedElement.tagName === 'SECTION' && draggedElement.querySelector('#map');
+              const isGoogleMapSectionTarget = target.tagName === 'SECTION' && target.querySelector('#map');
+
+              if ((isImageDrag && isImageTarget) || (isButtonDrag && isButtonTarget) || (isGoogleMapSectionDrag && isGoogleMapSectionTarget)) {
+                const tempHTML = draggedElement.innerHTML;
+                const tempWidth = draggedElement.style.width;
+                const tempHeight = draggedElement.style.height;
+                draggedElement.innerHTML = target.innerHTML;
+                draggedElement.style.width = target.style.width;
+                draggedElement.style.height = target.style.height;
+                target.innerHTML = tempHTML;
+                target.style.width = tempWidth;
+                target.style.height = tempHeight;
+
+                if (isGoogleMapSectionDrag || isGoogleMapSectionTarget) {
+                  [draggedElement, target].forEach(section => {
+                    const mapDiv = section.querySelector('#map');
+                    if (mapDiv) {
+                      const script = section.querySelector('script:not([src])');
+                      if (script) eval(script.textContent);
+                    }
+                  });
+                }
+              } else {
+                parent.insertBefore(draggedElement, target);
+              }
+              draggedElement.classList.remove('dragging');
+              target.classList.remove('drag-over');
+              draggedElement = null;
+              dropTarget = null;
+
+              const newHTML = document.documentElement.outerHTML;
+              window.parent.postMessage({ type: 'update-html', html: newHTML }, '*');
+            }
+          }
+        };
+
+        const handleDragEnd = () => {
+          if (draggedElement) {
+            draggedElement.classList.remove('dragging');
+            draggedElement = null;
+          }
+          if (dropTarget) {
+            dropTarget.classList.remove('drag-over');
+            dropTarget = null;
+          }
+          isDragging = false;
+        };
+
+        // Attach drag-and-drop event listeners
+        document.addEventListener('dragstart', handleDragStart);
+        document.addEventListener('dragover', handleDragOver);
+        document.addEventListener('dragleave', handleDragLeave);
+        document.addEventListener('drop', handleDrop);
+        document.addEventListener('dragend', handleDragEnd);
+
+        // Text editing for all text-containing elements
+        const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, button');
+        textElements.forEach(el => {
+          if (el.textContent && el.textContent.trim()) {
+            el.style.overflowWrap = el.style.overflowWrap || 'break-word';
+            el.style.wordBreak = el.style.wordBreak || 'break-word';
+            el.style.whiteSpace = el.style.whiteSpace || 'normal';
+
+            el.addEventListener('click', (e) => {
+              if (el.classList.contains('editing')) return;
+              el.classList.add('editing');
+
+              const computedStyle = window.getComputedStyle(el);
+              const originalText = el.textContent;
+
+              const textarea = document.createElement('textarea');
+              textarea.value = originalText;
+
+              textarea.style.width = computedStyle.width;
+              textarea.style.maxWidth = computedStyle.maxWidth === 'none' ? computedStyle.width : computedStyle.maxWidth;
+              textarea.style.height = 'auto';
+              textarea.style.minHeight = computedStyle.height;
+              textarea.style.maxHeight = computedStyle.maxHeight === 'none' ? 'none' : computedStyle.maxHeight;
+              textarea.style.padding = computedStyle.padding;
+              textarea.style.margin = computedStyle.margin;
+              textarea.style.border = '1px solid #ccc';
+              textarea.style.borderRadius = computedStyle.borderRadius;
+              textarea.style.fontFamily = computedStyle.fontFamily;
+              textarea.style.fontSize = computedStyle.fontSize;
+              textarea.style.fontWeight = computedStyle.fontWeight;
+              textarea.style.color = computedStyle.color;
+              textarea.style.backgroundColor = computedStyle.backgroundColor;
+              textarea.style.lineHeight = computedStyle.lineHeight;
+              textarea.style.textAlign = computedStyle.textAlign;
+              textarea.style.boxSizing = 'border-box';
+              textarea.style.resize = 'vertical';
+              textarea.style.overflowWrap = 'break-word';
+              textarea.style.wordBreak = 'break-word';
+              textarea.style.whiteSpace = 'normal';
+              textarea.style.overflow = computedStyle.overflow === 'visible' ? 'auto' : computedStyle.overflow;
+
+              el.textContent = '';
+              el.appendChild(textarea);
+              textarea.focus();
+
+              textarea.style.height = 'auto';
+              textarea.style.height = `${textarea.scrollHeight}px`;
+
+              textarea.addEventListener('input', () => {
+                textarea.style.height = 'auto';
+                textarea.style.height = `${textarea.scrollHeight}px`;
+              });
+
+              textarea.addEventListener('blur', () => {
+                const newText = textarea.value || originalText;
+                while (el.firstChild) {
+                  el.removeChild(el.firstChild);
+                }
+                el.textContent = newText;
+                el.classList.remove('editing');
+
+                el.style.overflowWrap = 'break-word';
+                el.style.wordBreak = 'break-word';
+                el.style.whiteSpace = 'normal';
+
+                const newHTML = document.documentElement.outerHTML;
+                window.parent.postMessage({ type: 'update-html', html: newHTML }, '*');
+              });
+
+              textarea.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  textarea.blur();
+                }
+              });
+            });
+          }
+        });
+
+        // Helper function to determine if the mouse is near an edge
+        const isNearEdge = (el, clientX, clientY) => {
+          const rect = el.getBoundingClientRect();
+          const edgeThreshold = 10;
+          const nearRight = Math.abs(clientX - rect.right) < edgeThreshold;
+          const nearBottom = Math.abs(clientY - rect.bottom) < edgeThreshold;
+          const nearLeft = Math.abs(clientX - rect.left) < edgeThreshold;
+          const nearTop = Math.abs(clientY - rect.top) < edgeThreshold;
+
+          if (nearRight && nearBottom) return 'bottom-right';
+          if (nearLeft && nearBottom) return 'bottom-left';
+          if (nearRight && nearTop) return 'top-right';
+          if (nearLeft && nearTop) return 'top-left';
+          if (nearRight) return 'right';
+          if (nearLeft) return 'left';
+          if (nearBottom) return 'bottom';
+          if (nearTop) return 'top';
+          return '';
+        };
+
+        // Edge-based resizing on the selection frame
+        document.addEventListener('mousemove', (e) => {
+          if (isResizing) return;
+
+          const frame = document.querySelector('.selection-frame');
+          if (frame) {
+            const edge = isNearEdge(frame, e.clientX, e.clientY);
+            if (edge === 'bottom-right' || edge === 'top-left') {
+              frame.style.cursor = 'se-resize';
+            } else if (edge === 'bottom-left' || edge === 'top-right') {
+              frame.style.cursor = 'sw-resize';
+            } else if (edge === 'left' || edge === 'right') {
+              frame.style.cursor = 'ew-resize';
+            } else if (edge === 'top' || edge === 'bottom') {
+              frame.style.cursor = 'ns-resize';
+            } else {
+              frame.style.cursor = 'default';
+            }
+          }
+        });
+
+        document.addEventListener('mousedown', (e) => {
+          const frame = document.querySelector('.selection-frame');
+          const target = document.querySelector('[data-drag-id="' + (frame?.getAttribute('data-target-id') || '') + '"]');
+          if (frame && target) {
+            const edge = isNearEdge(frame, e.clientX, e.clientY);
+            if (edge) {
+              isResizing = true;
+              resizeTarget = target;
+              resizeEdge = edge;
+              startX = e.clientX;
+              startY = e.clientY;
+              startWidth = parseInt(getComputedStyle(target).width) || target.offsetWidth;
+              startHeight = parseInt(getComputedStyle(target).height) || target.offsetHeight;
+              e.preventDefault();
+            }
+          }
+        });
+
+        document.addEventListener('mousemove', (e) => {
+          if (!isResizing || !resizeTarget) return;
+
+          const dx = e.clientX - startX;
+          const dy = e.clientY - startY;
+          let newWidth = startWidth;
+          let newHeight = startHeight;
+
+          if (resizeEdge.includes('right')) {
+            newWidth = Math.max(50, startWidth + dx);
+          } else if (resizeEdge.includes('left')) {
+            newWidth = Math.max(50, startWidth - dx);
+            resizeTarget.style.left = (parseInt(getComputedStyle(resizeTarget).left) || 0) + (startWidth - newWidth) + 'px';
+          }
+          if (resizeEdge.includes('bottom')) {
+            newHeight = Math.max(50, startHeight + dy);
+          } else if (resizeEdge.includes('top')) {
+            newHeight = Math.max(50, startHeight - dy);
+            resizeTarget.style.top = (parseInt(getComputedStyle(resizeTarget).top) || 0) + (startHeight - newHeight) + 'px';
+          }
+
+          resizeTarget.style.width = `${newWidth}px`;
+          resizeTarget.style.height = `${newHeight}px`;
+
+          const mapDiv = resizeTarget.querySelector('#map');
+          if (mapDiv) {
+            mapDiv.style.width = `${newWidth}px`;
+            mapDiv.style.height = `${newHeight - 50}px`;
+            if (typeof google !== 'undefined' && google.maps) {
+              google.maps.event.trigger(mapDiv.__gmap__, 'resize');
+            }
+          }
+
+          // Update the frame size
+          const frame = document.querySelector('.selection-frame');
+          if (frame) {
+            frame.style.width = (newWidth + 4) + 'px';
+            frame.style.height = (newHeight + 4) + 'px';
+            frame.style.left = (resizeTarget.getBoundingClientRect().left - 2 + window.scrollX) + 'px';
+            frame.style.top = (resizeTarget.getBoundingClientRect().top - 2 + window.scrollY) + 'px';
+          }
+        });
+
+        document.addEventListener('mouseup', () => {
+          if (isResizing) {
+            isResizing = false;
+            const newHTML = document.documentElement.outerHTML;
+            window.parent.postMessage({ type: 'update-html', html: newHTML }, '*');
+            resizeTarget.style.cursor = 'move';
+            resizeTarget = null;
+            resizeEdge = '';
+          }
+        });
+      });
+    </script>
+    <style>
+      .dragging {
+        opacity: 0.5;
+        transform: scale(1.2);
+        transition: opacity 0.3s, transform 0.2s ease-in-out;
+        border: 2px dashed #007bff;
+      }
+      .drag-over {
+        background: #a5d6a7;
+        border: 2px dashed #4caf50;
+      }
+      [draggable="true"] {
+        padding: 0.5rem;
+        margin: 0.5rem;
+        cursor: grab;
+      }
+      [draggable="true"].dragging {
+        cursor: grabbing;
+      }
+      .editing {
+        border: 1px dashed #007bff;
+        padding: 5px;
+      }
+      img, div, section, article, aside, figure, button {
+        min-width: 50px;
+        min-height: 50px;
+      }
+      section:has(#map) {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      .control-toolbar button:hover {
+        background: #f0f0f0;
+        border-radius: 4px;
+      }
+      .selection-frame {
+        pointer-events: auto;
+        box-sizing: border-box;
+      }
+    </style>
+  </body></html>
